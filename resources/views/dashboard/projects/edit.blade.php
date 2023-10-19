@@ -73,6 +73,7 @@
                                     <option {{$project->category == 'Web Apps' ? 'selected':''}} value="Web Apps">Web Apps</option>
                                     <option {{$project->category == 'Mobile App' ? 'selected':''}} value="Mobile App">Mobile App</option>
                                     <option {{$project->category == 'UI/UX' ? 'selected':''}} value="UI/UX">UI/UX</option>
+                                    <option {{$project->category == 'Planing' ? 'selected':''}} value="Planing">Planing</option>
                                     <option {{$project->category == 'Technical Writing' ? 'selected':''}} value="Technical Writing">Technical Writing</option>
                                 </select>
                                 @error('category')
@@ -107,6 +108,15 @@
                                         <input type="checkbox" {{$project->is_featured == 1 ? 'checked':''}}  name="is_featured">
                                     </div>
                                 </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="home_img">Project Image:</label>
+                                <input type="file" id="home_img" name="home_img" class="form-control @error('home_img') is-invalid @enderror">
+                                <small class="text-danger">dimentions: 360 x 280</small>
+                                @error('home_img')
+                                <span class="text-danger">{{ $message }}</span>
+                                @enderror
                             </div>
 
                             <button type="submit" class="btn btn-success">Save</button>

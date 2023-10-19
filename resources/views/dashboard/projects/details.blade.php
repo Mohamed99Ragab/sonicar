@@ -302,6 +302,8 @@
                         @csrf
                         <div class="form-group">
                             <input type="file"multiple  name="files[]" class="form-control" required>
+                            <small class="text-danger">dimentions: 581 x 581</small>
+
                         </div>
 
                         <div class="modal-footer">

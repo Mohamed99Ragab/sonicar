@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Jobs\SendEmailToUsersJob;
 use App\Models\FreeQuote;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class FreeQuoteController extends Controller
 {
@@ -16,6 +17,7 @@ class FreeQuoteController extends Controller
     }
 
     public function index(){
+
 
         $quotes = $this->modal->latest()->get();
 
@@ -61,8 +63,12 @@ class FreeQuoteController extends Controller
             'message'=>'required|string'
         ]);
 
-        dispatch(new SendEmailToUsersJob($request->message));
+        $auth = auth()->user();
 
+        dispatch(new SendEmailToUsersJob($request->message,$auth));
+
+        toast('working on sending the message to users','success');
+        return back();
 
 
 

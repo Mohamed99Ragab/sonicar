@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Dashboard;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\blogs\EditBlogRequest;
 use App\Http\Requests\blogs\StoreBlogRequest;
+use App\Jobs\SendNewsToUserSubscriptionJob;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Traits\FileManagementTrait;
@@ -55,7 +56,7 @@ class BlogController extends Controller
         //        store blog file on server
         $fileName = $this->storeFile('uploads/blogs',$request->file('file'));
 
-        $this->modal->create([
+       $blog = $this->modal->create([
             'title'=>$request->title,
             'category_id'=>$request->category_id,
             'content'=>$request->get('content'),
@@ -64,6 +65,8 @@ class BlogController extends Controller
             'file'=>$fileName
 
         ]);
+
+        $this->dispatch(new SendNewsToUserSubscriptionJob($blog));
 
         toast('blog created successfully','success');
         return back();

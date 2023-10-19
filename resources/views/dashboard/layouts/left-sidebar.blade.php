@@ -43,6 +43,10 @@
                 </li>
 
 
+
+
+
+
                 <li class="dropdown">
                     <a href="javascript:;" class="dropdown-toggle">
 								<span class="micon bi bi-quote"></span
@@ -68,6 +72,20 @@
                     </ul>
                 </li>
 
+                <li>
+                    <a href="{{route('subscripe.index')}}" class="dropdown-toggle no-arrow">
+								<span class="micon fa fa-list"></span
+                                ><span class="mtext">Subscriptions</span>
+                    </a>
+                </li>
+
+
+                <li>
+                    <a href="{{route('setting.index')}}" class="dropdown-toggle no-arrow">
+								<span class="micon dw dw-settings2"></span
+                                ><span class="mtext">Settings</span>
+                    </a>
+                </li>
 
                 <li>
                     <a href="{{url('/')}}" target="_blank" class="dropdown-toggle no-arrow">

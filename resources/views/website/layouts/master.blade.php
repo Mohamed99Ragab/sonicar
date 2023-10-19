@@ -77,14 +77,18 @@
                         <div class="contact-info-box-wrapper">
                             <div class="contact-info-box"><span class="icon-telephone"></span>
                                 <div>
+                                    @if(isset($sharedData['phone']))
                                     <h6>Give us a call</h6>
-                                    <p>(123) 456 7890</p>
+                                    <p>{{$sharedData['phone']}}</p>
                                 </div>
+                                @endif
                             </div>
                             <div class="contact-info-box"><span class="icon-envelope"></span>
                                 <div>
+                                    @if(isset($sharedData['email']))
                                     <h6>Send an email</h6>
-                                    <p>yourcompany@sample.com</p>
+                                    <p>{{$sharedData['email']}}</p>
+                                    @endif
                                 </div>
                             </div>
                         </div>

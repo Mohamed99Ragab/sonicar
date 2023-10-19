@@ -3,6 +3,7 @@
 @section('title')
     {{$blog->title}} - Sonicar-Tech
 @endsection
+@section('meta_description') {{ strip_tags(html_entity_decode(substr($blog->content,0,100))) }} @endsection
 
 @section('css')
 
@@ -45,12 +46,13 @@
                     <div class="blog-post-share">
                         <ul class="social-links">
                             <li>Share this post:</li>
-                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>
-                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>
-                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>
-                            <li><a href="#"><span class="fa fa-instagram"></span></a></li>
-                            <li><a href="#"><span class="fa fa-pinterest"></span></a></li>
-                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>
+                            {!! $shareComponent !!}
+{{--                            <li><a href="#"><span class="fa fa-facebook"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="fa fa-twitter"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="fa fa-google-plus"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="fa fa-instagram"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="fa fa-pinterest"></span></a></li>--}}
+{{--                            <li><a href="#"><span class="fa fa-linkedin"></span></a></li>--}}
                         </ul>
                     </div>
                     <!--blog share end-->
@@ -65,10 +67,13 @@
                             @foreach($relatedBlogs as $blog)
                             <!--blog content box-->
                             <div class="col-sm-12 col-md-6">
-                                <div class="box-content-with-img "> <img src="{{asset('uploads/blogs/'.$blog->file)}}" class="img-responsive" alt="blog image">
+                                <div class="box-content-with-img ">
+                                    <a href="{{route('blog.details',$blog->slug)}}">
+                                    <img src="{{asset('uploads/blogs/'.$blog->file)}}" class="img-responsive" alt="blog image">
+                                    </a>
                                     <div class="box-content-text equalheight" style="height: 293px;">
                                         <p class="gray-text"><span class="icon-calendar-full"></span>{{date_format($blog->created_at,'d M, Y')}}</p>
-                                        <h3 class="semi-bold"><a href="#">{{$blog->title}}</a></h3>
+                                        <h3 class="semi-bold"><a href="{{route('blog.details',$blog->slug)}}">{{$blog->title}}</a></h3>
                                         <p class="regular-text">{!! substr($blog->content,0,100) !!}..</p>
                                     </div>
                                 </div>
@@ -144,6 +149,14 @@
 
 @section('js')
 
+    <script>
+        sharedButtons = document.querySelectorAll('.social-button');
+
+        for (const element of sharedButtons) {
+
+            element.setAttribute('target','_blank');
+        }
+    </script>
 
 @endsection
 

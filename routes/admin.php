@@ -7,6 +7,8 @@ use App\Http\Controllers\Dashboard\CategoryController;
 use App\Http\Controllers\Dashboard\ContactsController;
 use App\Http\Controllers\Dashboard\FreeQuoteController;
 use App\Http\Controllers\Dashboard\ProjectsController;
+use App\Http\Controllers\Dashboard\SettingController;
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\website\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -96,6 +98,28 @@ Route::group(['middleware'=>'auth:web','prefix'=>'admin'],function (){
 
         Route::get('profile', 'index')->name('profile.index');
         Route::post('profile', 'update')->name('profile.update');
+
+
+    });
+
+    // subscriptions
+    Route::group(['controller'=>SubscriptionController::class],function (){
+
+        Route::get('subscripe','index')->name('subscripe.index');
+        Route::delete('subscripe','deleteALL')->name('subscripe.delete.all');
+        Route::get('subscripe/{id}','destroy')->name('subscripe.destroy');
+
+
+
+    });
+
+    //settings
+    Route::group(['controller'=>SettingController::class],function (){
+
+        Route::get('setting','index')->name('setting.index');
+        Route::post('setting/about','about')->name('setting.about');
+        Route::post('setting/meta','meta')->name('setting.meta');
+        Route::post('setting/contact','contactInfo')->name('setting.contact');
 
 
     });

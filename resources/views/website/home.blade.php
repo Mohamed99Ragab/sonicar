@@ -4,6 +4,8 @@
     Sonicar technology
 @endsection
 
+@section('meta_description'){{$sharedData['meta_discription']}}@endsection
+
 @section('css')
 
 @endsection
@@ -258,6 +260,7 @@
                 <button class="button" data-filter=".a1">Web Apps</button>
                 <button class="button" data-filter=".a2">Mobile App</button>
                 <button class="button" data-filter=".a3">UI/UX</button>
+                <button class="button" data-filter=".a5">Planing</button>
                 <button class="button" data-filter=".a4">Technical Writing</button>
             </div>
             <!-- button-group ends -->
@@ -295,6 +298,7 @@
                             </div>
                         </div>
 
+
                     @elseif($project->category == 'Mobile App')
                         <div class="a2 grid-item">
                             <div class="img_container">
@@ -312,6 +316,21 @@
 
                     @elseif($project->category == 'UI/UX')
                         <div class="a3 grid-item">
+                            <div class="img_container">
+                                <img src="{{asset("uploads/projects/$project->home_img")}}" alt="port_img" class="img-responsive">
+                                <div class="overlay">
+                                    <a onclick="showModal(event)" data-id="{{$project->id}}" class="btn btn-nofill proDetModal{{$project->id}}">Discover</a>
+                                </div>
+                                <!-- End of .overlay -->
+                            </div>
+                            <!-- End of .img_container -->
+                            <div class="text-content">
+                                <h3><a onclick="showModal(event)" data-id="{{$project->id}}" class="proDetModal proDetModal{{$project->id}}">{{$project->title}}<span>{{$project->category}}</span></a></h3>
+                            </div>
+                        </div>
+
+                    @elseif($project->category == 'Planing')
+                        <div class="a5 grid-item">
                             <div class="img_container">
                                 <img src="{{asset("uploads/projects/$project->home_img")}}" alt="port_img" class="img-responsive">
                                 <div class="overlay">
@@ -371,21 +390,30 @@
                 <!--form for free quote-->
                 <div class="col-xl-4 col-lg-4 col-md-5 col-sm-12">
                     <div class="customise-form">
-                        <form class="email_form" method="post">
+                        <form action="{{route('free.quote.send')}}"  method="post">
+                            @csrf
                             <div class="form-element-wrapper">
                                 <h3>Get a Free Quote</h3>
                                 <div class="form-group customised-formgroup"><span class="icon-user"></span>
-                                    <input type="text" name="full_name" class="form-control" placeholder="Name">
+                                    <input type="text" name="name" class="form-control" placeholder="Name">
                                 </div>
                                 <div class="form-group customised-formgroup"><span class="icon-envelope"></span>
                                     <input type="email" name="email" class="form-control" placeholder="Email">
                                 </div>
-                                <div class="form-group customised-formgroup"><span class="icon-telephone"></span>
-                                    <input type="text" name="phone" class="form-control" placeholder="Phone">
+                                <div class="form-group customised-formgroup"><span class="icon-cash-dollar"></span>
+                                    <input type="text" name="price" class="form-control" placeholder="Price">
                                 </div>
-                                <div class="form-group customised-formgroup"><span class="icon-laptop"></span>
-                                    <input type="text" name="website" class="form-control" placeholder="Website">
+                                <div class="form-group customised-formgroup">
+                                    <select name="service" class="form-select">
+                                        <option readonly="" disabled selected>Select Service..</option>
+                                        <option value="Web Apps">Web Apps</option>
+                                        <option value="Mobile App">Mobile App</option>
+                                        <option value="UI/UX">UI/UX</option>
+                                        <option value="Technical Writing">Technical Writing</option>
+                                        <option value="Planing">Planing</option>
+                                    </select>
                                 </div>
+
                                 <div class="form-group customised-formgroup"><span class="icon-bubble"></span>
                                     <textarea name="message" class="form-control" placeholder="Message"></textarea>
                                 </div>

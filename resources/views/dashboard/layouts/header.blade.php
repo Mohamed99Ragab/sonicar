@@ -179,7 +179,7 @@
                     <a class="dropdown-item" href="{{route('profile.index')}}"
                     ><i class="dw dw-user1"></i> Profile</a
                     >
-                    <a class="dropdown-item" href="profile.html"
+                    <a class="dropdown-item" href="{{route('setting.index')}}"
                     ><i class="dw dw-settings2"></i> Setting</a
                     >
 

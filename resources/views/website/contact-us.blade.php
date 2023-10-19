@@ -2,8 +2,10 @@
 @extends('website.layouts.master')
 
 @section('title')
-   Contact Us | Sonicar Tech
+   Contact us - Sonicar Tech
 @endsection
+@section('meta_description') @endsection
+
 
 @section('css')
 

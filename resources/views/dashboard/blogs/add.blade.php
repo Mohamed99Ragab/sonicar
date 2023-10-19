@@ -70,7 +70,7 @@
                                 <label>Publish:</label>
                                 <br>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" name="status" class="custom-control-input" id="customCheck1"/>
+                                    <input type="checkbox" checked name="status" class="custom-control-input" id="customCheck1"/>
                                     <label class="custom-control-label" for="customCheck1">Status</label>
 
                                 </div>

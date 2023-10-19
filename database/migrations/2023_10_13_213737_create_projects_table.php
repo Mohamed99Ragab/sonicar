@@ -16,7 +16,7 @@ class CreateProjectsTable extends Migration
         Schema::create('projects', function (Blueprint $table) {
             $table->id();
             $table->string('title');
-            $table->enum('category',['Web Apps','Technical Writing','Mobile App','UI/UX']);
+            $table->enum('category',['Web Apps','Technical Writing','Mobile App','UI/UX','Planing']);
             $table->text('description');
             $table->string('url');
             $table->boolean('is_featured')->default(0);

@@ -40,8 +40,26 @@ class BlogController extends Controller
         $categories = $this->categoryModal->get();
         $recentBlogs = $this->modal->latest()->take(5)->get();
 
+        $htmlContent = substr($blog->content,0,150);
+        $subBlogContent = strip_tags(html_entity_decode($htmlContent));
 
-        return view('website.blogs.details',compact('blog','relatedBlogs','categories','recentBlogs'));
+        $shareComponent = \Share::page(
+            ''.url('blogs',$slug).'',
+            "$blog->title -- $subBlogContent"
+        )
+            ->facebook()
+            ->twitter()
+            ->telegram()
+            ->whatsapp()
+            ->linkedin();
+
+        return view('website.blogs.details',compact(
+            'blog',
+            'relatedBlogs',
+            'categories',
+            'recentBlogs',
+            'shareComponent'
+        ));
     }
 
     public function search(Request $request){

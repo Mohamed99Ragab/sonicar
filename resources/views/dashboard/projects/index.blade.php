@@ -166,6 +166,7 @@
                                 <option value="Web Apps">Web Apps</option>
                                 <option value="Mobile App">Mobile App</option>
                                 <option value="UI/UX">UI/UX</option>
+                                <option value="Planing">Planing</option>
                                 <option value="Technical Writing">Technical Writing</option>
                             </select>
                             @error('title')
@@ -243,6 +244,7 @@
                         <div class="form-group">
                             <label for="home_img">Project Image:</label>
                             <input type="file" id="home_img" name="home_img" class="form-control-file @error('home_img') is-invalid @enderror">
+                           <small class="text-danger">dimentions: 360 x 280</small>
                             @error('home_img')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror
@@ -251,6 +253,8 @@
                         <div class="form-group">
                             <label for="files">sliders:</label>
                             <input type="file" id="files" multiple name="files[]" class="form-control-file @error('files') is-invalid @enderror">
+                            <small class="text-danger">dimentions: 581 x 581</small>
+
                             @error('files')
                             <span class="text-danger">{{ $message }}</span>
                             @enderror

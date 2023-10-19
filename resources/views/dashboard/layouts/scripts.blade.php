@@ -1,14 +1,14 @@
 <!-- js -->
-<script src="{{asset('Dashboard/vendors/scripts/core.js')}}"></script>
-<script src="{{asset('Dashboard/vendors/scripts/script.min.js')}}"></script>
-<script src="{{asset('Dashboard/vendors/scripts/process.js')}}"></script>
-<script src="{{asset('Dashboard/vendors/scripts/layout-settings.js')}}"></script>
-<script src="{{asset('Dashboard/src/plugins/apexcharts/apexcharts.min.js')}}"></script>
-<script src="{{asset('Dashboard/src/plugins/datatables/js/jquery.dataTables.min.js')}}"></script>
-<script src="{{asset('Dashboard/src/plugins/datatables/js/dataTables.bootstrap4.min.js')}}"></script>
-<script src="{{asset('Dashboard/src/plugins/datatables/js/dataTables.responsive.min.js')}}"></script>
-<script src="{{asset('Dashboard/src/plugins/datatables/js/responsive.bootstrap4.min.js')}}"></script>
-<script src="{{asset('Dashboard/vendors/scripts/dashboard3.js')}}"></script>
+<script src="{{asset('dashboard/vendors/scripts/core.js')}}"></script>
+<script src="{{asset('dashboard/vendors/scripts/script.min.js')}}"></script>
+<script src="{{asset('dashboard/vendors/scripts/process.js')}}"></script>
+<script src="{{asset('dashboard/vendors/scripts/layout-settings.js')}}"></script>
+<script src="{{asset('dashboard/src/plugins/apexcharts/apexcharts.min.js')}}"></script>
+<script src="{{asset('dashboard/src/plugins/datatables/js/jquery.dataTables.min.js')}}"></script>
+<script src="{{asset('dashboard/src/plugins/datatables/js/dataTables.bootstrap4.min.js')}}"></script>
+<script src="{{asset('dashboard/src/plugins/datatables/js/dataTables.responsive.min.js')}}"></script>
+<script src="{{asset('dashboard/src/plugins/datatables/js/responsive.bootstrap4.min.js')}}"></script>
+<script src="{{asset('dashboard/vendors/scripts/dashboard3.js')}}"></script>
 <!-- Google Tag Manager (noscript) -->
 <noscript
 ><iframe

@@ -17,9 +17,14 @@
                 </div>
                 <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12">
                     <ul class="pull-right header-right">
-                        <li> <a href="tel:012.345.1234"><span class="icon-telephone"></span><span>012.345.1234</span></a></li>
+                        @if(isset($sharedData['phone']))
+                        <li> <a href="tel:{{$sharedData['phone']}}"><span class="icon-telephone"></span><span>{{$sharedData['phone']}}</span></a></li>
+                        @endif
                         <li> <img src="{{asset('website/images/separator.png')}}" alt="separator" class="img-responsive" /> </li>
-                        <li> <a href="mailto:info@sonicar.tech"><span class="icon-envelope"></span><span>info@sonicar.tech</span></a> </li>
+                        @if(isset($sharedData['email']))
+
+                            <li> <a href="mailto:{{$sharedData['email']}}"><span class="icon-envelope"></span><span>{{$sharedData['email']}}</span></a> </li>
+                        @endif
                     </ul>
                 </div>
             </div>

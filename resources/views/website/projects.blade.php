@@ -1,8 +1,10 @@
 @extends('website.layouts.master')
 
+
 @section('title')
-    Sonicar Tech - Portfolio
+    Portfolio - Sonicar Tech
 @endsection
+@section('meta_description') @endsection
 
 @section('css')
 

@@ -259,6 +259,16 @@ class ProjectsController extends Controller
             'is_featured'=>$request->is_featured =='on' ? 1 : 0
         ]);
 
+        if ($request->file('home_img')){
+
+            $this->removeFile('public','projects',$project->home_img);
+
+            $fileName = $this->storeFile('uploads/projects',$request->file('home_img'));
+            $project->update([
+                'home_img'=>$fileName
+            ]);
+        }
+
 
 
         toast('project edit success','success');

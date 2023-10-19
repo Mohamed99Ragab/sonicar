@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\SubscriptionController;
 use App\Http\Controllers\website\AboutController;
 use App\Http\Controllers\website\BlogController;
 use App\Http\Controllers\website\ContactUsController;
@@ -49,3 +50,16 @@ Route::group(['controller'=>BlogController::class],function () {
 
     Route::post('blogs/search','search')->name('blog.search');
 });
+
+
+
+// subscriptions
+Route::group(['controller'=>SubscriptionController::class],function (){
+
+    Route::post('subscripe','store')->name('subscripe.store');
+
+
+
+
+});
+

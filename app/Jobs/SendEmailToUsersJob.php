@@ -2,12 +2,16 @@
 
 namespace App\Jobs;
 
+use App\Mail\NotifyAllUserMail;
+use App\Models\FreeQuote;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
 use Illuminate\Contracts\Queue\ShouldBeUnique;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Support\Facades\Mail;
 
 class SendEmailToUsersJob implements ShouldQueue
 {
@@ -19,9 +23,12 @@ class SendEmailToUsersJob implements ShouldQueue
      * @return void
      */
     protected $message;
-    public function __construct($message)
+    protected $auth;
+
+    public function __construct($message , $auth)
     {
         $this->message = $message;
+        $this->auth = $auth;
     }
 
     /**
@@ -31,6 +38,14 @@ class SendEmailToUsersJob implements ShouldQueue
      */
     public function handle()
     {
+        $usersQuote = FreeQuote::select('name','email')->distinct()->get();
 
+
+        foreach ($usersQuote as $item){
+
+
+            Mail::to($item->email)->send(new NotifyAllUserMail($this->message));
+
+        }
     }
 }

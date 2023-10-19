@@ -4,6 +4,7 @@
     Blogs - Sonicar-Tech
 @endsection
 
+@section('meta_description') @endsection
 @section('css')
 
 @endsection
