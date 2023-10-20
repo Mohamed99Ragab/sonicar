@@ -21,6 +21,8 @@ class CreateBlogsTable extends Migration
             $table->foreignId('category_id')->references('id')->on('categories')->cascadeOnDelete();
             $table->foreignId('user_id')->references('id')->on('users')->cascadeOnDelete();
            $table->enum('status',[0,1])->default(1);
+           $table->string('meta_title');
+           $table->text('meta_description');
             $table->string('file');
             $table->timestamps();
         });

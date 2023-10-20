@@ -44,12 +44,12 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown"> <a href="#" data-bs-toggle="dropdown" class="dropdown-toggle">Services</a>
                         <ul class="dropdown-menu">
-                            <li><a href="logo-and-branding.html"><span class="icon-palette"></span>Logo &amp; Branding</a></li>
-                            <li><a href="website-development.html" class="b-clor"><span class="icon-laptop-phone"></span>Website Development</a></li>
-                            <li><a href="mobile-app-development.html"><span class="icon-smartphone-embed"></span>Mobile App Development</a></li>
-                            <li><a href="seo.html"><span class="icon-magnifier"></span>Search Engine Optimization</a></li>
-                            <li><a href="pay-per-click.html"><span class="icon-select2"></span>Pay-Per-Click</a></li>
-                            <li><a href="social-media-marketing.html"><span class="icon-share"></span>Social Media Marketing</a></li>
+                            <li><a href="#services"><span class="icon-pencil"></span>Analysis & Planing</a></li>
+                            <li><a href="#services" class="b-clor"><span class="icon-laptop-phone"></span>Website Development</a></li>
+                            <li><a href="#services"><span class="icon-smartphone-embed"></span>Mobile App Development</a></li>
+                            <li><a href="#services"><span class="icon-document"></span>Technical Writing Services</a></li>
+                            <li><a href="#services"><span class="icon-vector"></span>UI/UX</a></li>
+                            <li><a href="#services"><span class="icon-share"></span>Social Media Marketing</a></li>
                         </ul>
                     </li>
                     <li><a href="{{route('projects')}}">Portfolio</a></li>

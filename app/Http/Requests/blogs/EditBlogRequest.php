@@ -2,10 +2,15 @@
 
 namespace App\Http\Requests\blogs;
 
+use App\Http\Traits\RequestValidationErrorTrait;
+use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Http\Exceptions\HttpResponseException;
 
 class EditBlogRequest extends FormRequest
 {
+
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -28,6 +33,11 @@ class EditBlogRequest extends FormRequest
             'file'=>'file',
             'category_id'=>'required|exists:categories,id',
             'content'=>'required',
+            'meta_title'=>'required|string',
+            'meta_description'=>'required|string'
         ];
     }
+
+
+
 }

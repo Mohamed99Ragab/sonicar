@@ -62,7 +62,9 @@ class BlogController extends Controller
             'content'=>$request->get('content'),
             'user_id'=>Auth::id(),
             'status'=>$request->status == 'on'? '1' : '0',
-            'file'=>$fileName
+            'file'=>$fileName,
+           'meta_title'=>$request->meta_title,
+           'meta_description'=>$request->meta_description
 
         ]);
 
@@ -93,6 +95,9 @@ class BlogController extends Controller
 
     public function update(EditBlogRequest $request, $id)
     {
+
+
+
         $blog = $this->modal->findOrFail($id);
 
 
@@ -101,6 +106,8 @@ class BlogController extends Controller
             'category_id'=>$request->category_id,
             'content'=>$request->get('content'),
             'status'=>$request->status == 'on'? '1' : '0',
+            'meta_title'=>$request->meta_title,
+            'meta_description'=>$request->meta_description
 
         ]);
 

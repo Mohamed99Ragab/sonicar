@@ -70,7 +70,7 @@
                                 <label>Publish:</label>
                                 <br>
                                 <div class="custom-control custom-checkbox">
-                                    <input type="checkbox" checked name="status" class="custom-control-input" id="customCheck1"/>
+                                    <input type="checkbox" checked="" name="status" class="custom-control-input" id="customCheck1"/>
                                     <label class="custom-control-label" for="customCheck1">Status</label>
 
                                 </div>
@@ -87,6 +87,21 @@
                                 <textarea
                                     class="textarea_editor form-control border-radius-0" name="content"
                                     placeholder="Enter text ..."
+                                ></textarea>
+                            </div>
+
+                            <div class="form-group mb-2">
+                                <label for="">meta title</label>
+                                <input type="text"name="meta_title" class="form-control">
+                            </div>
+
+
+
+                            <div class="form-group mb-2">
+                                <label for="">meta description</label>
+                                <textarea
+                                    class="form-control" name="meta_description"
+                                    placeholder="Enter your text.."
                                 ></textarea>
                             </div>
 

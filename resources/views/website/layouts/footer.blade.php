@@ -115,8 +115,12 @@
                                     <li><a href="{{$socialLinks['linkedin']}}" target="_blank"><span class="icon-linkedin"></span></a></li>
                                 @endif
 
+                                @if(isset($socialLinks['behance']))
+                                    <li><a href="{{$socialLinks['behance']}}" target="_blank"><span class="fa-brands fa-behance"></span></a></li>
+                                @endif
+
                                 @if(isset($socialLinks['youtube']))
-                                    <li><a href="{{$socialLinks['youtube']}}" target="_blank"><span class="icon-youtube"></span></a></li>
+                                    <li><a href="{{$socialLinks['youtube']}}" target="_blank"><span class="fa-brands fa-youtube"></span></a></li>
                                 @endif
                             </ul>
                         </li>

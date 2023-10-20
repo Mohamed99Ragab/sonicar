@@ -39,9 +39,10 @@
 
                     </div>
                 </div>
-                <div class="card-box mb-30">
+                <div class="card-box my-3">
 {{--                    @if ($errors->any())--}}
-{{--                        <div class="alert alert-danger text-center w-50 mx-auto">--}}
+
+{{--                        <div class="alert alert-danger text-center w-50 mx-auto my-2">--}}
 {{--                            {{$errors->first()}}--}}
 {{--                        </div>--}}
 {{--                    @endif--}}
@@ -88,11 +89,24 @@
                                 <textarea
                                     class="textarea_editor form-control border-radius-0" name="content"
                                     placeholder="Enter text ..."
-                                >{{$blog->content}}</textarea>
+                                >{!! $blog->content !!}</textarea>
                             </div>
 
-                            <button type="submit" class="btn btn-primary">Save</button>
+                            <div class="form-group mb-2">
+                                <label for="">meta title</label>
+                                <input value="{{$blog->meta_title}}" type="text"name="meta_title" class="form-control">
+                            </div>
 
+
+
+                            <div class="form-group mb-2">
+                                <label for="">meta description</label>
+                                <textarea
+                                    class="form-control" name="meta_description"
+                                    placeholder="Enter your text.."
+                                >{{$blog->meta_description}}</textarea>
+
+                            <button type="submit" class="btn btn-primary my-2">Save</button>
 
                         </form>
 

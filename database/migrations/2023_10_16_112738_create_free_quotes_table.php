@@ -18,7 +18,7 @@ class CreateFreeQuotesTable extends Migration
             $table->string('name');
             $table->string('email');
             $table->string('price');
-            $table->enum('service',['Web Apps','Technical Writing','Mobile App','UI/UX','Planing']);
+            $table->enum('service',['Web Apps','Technical Writing','Mobile App','UI/UX','Analysis & Planing']);
             $table->text('message');
             $table->timestamps();
         });

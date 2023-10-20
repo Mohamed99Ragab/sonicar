@@ -185,6 +185,12 @@
                                 <input value="{{isset($settings['youtube'])? $settings['youtube']->value : ''}}" type="text"name="youtube" class="form-control">
                             </div>
 
+                            <div class="form-group mb-2">
+                                <label for="">Behance</label>
+                                <input value="{{isset($settings['behance'])? $settings['behance']->value : ''}}" type="text"name="behance" class="form-control">
+                            </div>
+
+
 
 
 

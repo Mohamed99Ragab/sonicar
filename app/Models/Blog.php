@@ -19,7 +19,9 @@ class Blog extends Model
         'category_id',
         'created_at',
         'updated_at',
-        'file'
+        'file',
+        'meta_title',
+        'meta_description'
     ];
 
 

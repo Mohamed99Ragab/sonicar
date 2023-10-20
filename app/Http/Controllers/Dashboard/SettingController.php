@@ -32,7 +32,8 @@ class SettingController extends Controller
             'linkedin',
             'twitter',
             'instagram',
-            'youtube'
+            'youtube',
+            'behance'
         ];
 
 
@@ -136,6 +137,7 @@ class SettingController extends Controller
             'twitter'=>'url|nullable',
             'instagram'=>'url|nullable',
             'youtube'=>'url|nullable',
+            'behance'=>'url|nullable',
         ]);
 
         if ($validator->fails()) {
@@ -154,6 +156,8 @@ class SettingController extends Controller
             'twitter' => $request->twitter,
             'instagram' => $request->instagram,
             'youtube' => $request->youtube,
+            'behance' => $request->behance,
+
         ];
 
         foreach ($fieldsToUpdate as $key => $value) {

@@ -190,7 +190,7 @@
             <div class="row">
                 <!-- Plaing features box -->
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="box-green-border"> <a href="planing-and-analysis.html"><span class="icon-pencil"></span>
+                    <div class="box-green-border"> <a href="#"><span class="icon-pencil"></span>
                             <div>Analysis &AMP; Planing</div>
                         </a>
                         <p>We improve the process of products by planing and writing technical specifications and documentation. </p>
@@ -199,7 +199,7 @@
                 <!--end features box -->
                 <!-- Web Development features box -->
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="box-green-border"> <a href="website-development.html"><span class="icon-laptop-phone"></span>
+                    <div class="box-green-border"> <a href="#"><span class="icon-laptop-phone"></span>
                             <div>Website Development</div>
                         </a>
                         <p>We design professional looking yet simple websites. Our designs are simple and user friendly.</p>
@@ -208,7 +208,7 @@
                 <!--end features box -->
                 <!-- Mobile features box -->
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="box-green-border"> <a href="mobile-app-development.html"><span class="icon-smartphone-embed"></span>
+                    <div class="box-green-border"> <a href="#"><span class="icon-smartphone-embed"></span>
                             <div>Mobile App Development</div>
                         </a>
                         <p>From simple Content Management System to complex eCommerce products, we cover it all.</p>
@@ -219,7 +219,7 @@
             <div class="row margin-top-15">
                 <!-- Writing features box -->
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="box-green-border"> <a href="technical-writing.html"><span class="icon-document"></span>
+                    <div class="box-green-border"> <a href="#"><span class="icon-document"></span>
                             <div>Technical Writing Services</div>
                         </a>
                         <p>We write professional user guides for products. Our guides are search engine and user friendly.</p>
@@ -228,7 +228,7 @@
                 <!--end features box -->
                 <!-- features box -->
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="box-green-border"> <a href="ui-ux.html"><span class="icon-vector"></span>
+                    <div class="box-green-border"> <a href="#"><span class="icon-vector"></span>
                             <div>UI/UX</div>
                         </a>
                         <p>From Sketches to User Interface and User Experience. Improving the process by prototypes and user flow diagrams.</p>
@@ -237,7 +237,7 @@
                 <!--end features box -->
                 <!-- features box -->
                 <div class="col-xl-4 col-lg-4 col-md-4 col-sm-12">
-                    <div class="box-green-border"> <a href="social-media-marketing.html"><span class="icon-share"></span>
+                    <div class="box-green-border"> <a href="#"><span class="icon-share"></span>
                             <div>Social Media Marketing</div>
                         </a>
                         <p>Our comprehensive Online Marketing strategy will boost your website and traffic hence monthly sales.</p>
@@ -410,7 +410,7 @@
                                         <option value="Mobile App">Mobile App</option>
                                         <option value="UI/UX">UI/UX</option>
                                         <option value="Technical Writing">Technical Writing</option>
-                                        <option value="Planing">Planing</option>
+                                        <option value="Analysis & Planing">Analysis & Planing</option>
                                     </select>
                                 </div>
 

@@ -73,28 +73,55 @@
                 </div>
                 <div class="col-xl-4 col-lg-4 col-md-6 col-sm-12">
                     <div class="contact-info-box-wrapper">
+                        @if(isset($sharedData['phone']))
                         <div class="contact-info-box"> <span class="icon-telephone"></span>
                             <div>
                                 <h6>Give us a call</h6>
-                                <a href="tel:012.345.1234"><p>0123451234</p></a>
+                                <a href="tel:{{$sharedData['phone']}}"><p>{{$sharedData['phone']}}</p></a>
                             </div>
                         </div>
+                        @endif
+
+                        @if(isset($socialLinks['gmail']))
                         <div class="contact-info-box"> <span class="icon-envelope"></span>
                             <div>
                                 <h6>Send an email</h6>
-                                <a href="mailto:info@company.com">
-                                <p>info@sonicar.tech</p>
+                                <a href="mailto:{{$socialLinks['gmail']}}">
+                                <p>{{$socialLinks['gmail']}}</p>
                                 </a>
                             </div>
                         </div>
+                        @endif
                         <div class="contact-info-box">
                             <ul class="social-links">
-                                <li><a href="#"><span class="icon-facebook"></span></a></li>
-                                <li><a href="#"><span class="icon-twitter"></span></a></li>
-                                <li><a href="#"><span class="icon-google-plus"></span></a></li>
-                                <li><a href="#"><span class="icon-instagram"></span></a></li>
-                                <li><a href="#"><span class="icon-pinterest"></span></a></li>
-                                <li><a href="#"><span class="icon-linkedin"></span></a></li>
+                                @if(isset($socialLinks['facebook']))
+                                    <li><a href="{{$socialLinks['facebook']}}" target="_blank"><span class="icon-facebook"></span></a></li>
+                                @endif
+
+                                @if(isset($socialLinks['twitter']))
+                                    <li><a href="{{$socialLinks['twitter']}}" target="_blank"><span class="icon-twitter"></span></a></li>
+                                @endif
+
+                                @if(isset($socialLinks['gmail']))
+                                    <li><a href="mailto:{{$socialLinks['gmail']}}" target="_blank"><span class="icon-google-plus"></span></a></li>
+                                @endif
+
+                                @if(isset($socialLinks['instagram']))
+                                    <li><a href="{{$socialLinks['instagram']}}" target="_blank"><span class="icon-instagram"></span></a></li>
+                                @endif
+
+                                @if(isset($socialLinks['linkedin']))
+                                    <li><a href="{{$socialLinks['linkedin']}}" target="_blank"><span class="icon-linkedin"></span></a></li>
+                                @endif
+
+                                @if(isset($socialLinks['behance']))
+                                    <li><a href="{{$socialLinks['behance']}}" target="_blank"><span class="fa-brands fa-behance"></span></a></li>
+                                @endif
+
+                                @if(isset($socialLinks['youtube']))
+                                    <li><a href="{{$socialLinks['youtube']}}" target="_blank"><span class="fa-brands fa-youtube"></span></a></li>
+                                @endif
+
                             </ul>
                         </div>
                     </div>

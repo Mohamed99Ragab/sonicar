@@ -54,7 +54,7 @@
                                         <option value="Mobile App">Mobile App</option>
                                         <option value="UI/UX">UI/UX</option>
                                         <option value="Technical Writing">Technical Writing</option>
-                                        <option value="Planing">Planing</option>
+                                        <option value="Analysis & Planing">Analysis & Planing</option>
                                     </select>
                                 </div>
                                 <div class="form-group customised-formgroup"><span class="icon-bubble"></span>

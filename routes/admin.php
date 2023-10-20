@@ -90,7 +90,7 @@ Route::group(['middleware'=>'auth:web','prefix'=>'admin'],function (){
 
     //    blogs
     Route::delete('blogDeleteAll',[BlogController::class,'deleteAll'])->name('blog.delete.all');
-    Route::get('blog/delete/{id}',[BlogController::class,'delete'])->name('blog.delete');
+    Route::get('blog/delete/{id}',[BlogController::class,'delete'])->name('blog.item.delete');
     Route::resource('blog',BlogController::class);
 
     // profile

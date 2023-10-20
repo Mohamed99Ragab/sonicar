@@ -35,7 +35,7 @@ class AppServiceProvider extends ServiceProvider
         $instagram = Setting::where('key','instagram')->first();
         $twitter = Setting::where('key','twitter')->first();
         $youtube = Setting::where('key','youtube')->first();
-
+        $behance = Setting::where('key','behance')->first();
         $meta_discription = Setting::where('key','meta_discription')->first();
 
 
@@ -52,7 +52,8 @@ class AppServiceProvider extends ServiceProvider
             'linkedin'=>$linkedin->value,
             'instagram'=>$instagram->value,
             'twitter'=>$twitter->value,
-            'youtube'=>$youtube->value
+            'youtube'=>$youtube->value,
+            'behance'=>$behance->value,
 
         ]);
 

@@ -2,10 +2,12 @@
 
 namespace App\Http\Requests\blogs;
 
+use App\Traits\RequestValidationErrorTrait;
 use Illuminate\Foundation\Http\FormRequest;
 
 class StoreBlogRequest extends FormRequest
 {
+
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -27,7 +29,9 @@ class StoreBlogRequest extends FormRequest
             'title'=>'required|string',
             'file'=>'required|file',
             'category_id'=>'required|exists:categories,id',
-            'content'=>'required'
+            'content'=>'required',
+            'meta_title'=>'required|string',
+            'meta_description'=>'required|string'
         ];
     }
 }

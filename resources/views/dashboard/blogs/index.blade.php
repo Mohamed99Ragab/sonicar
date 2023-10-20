@@ -93,7 +93,7 @@
                                 <td>{{date_format($blog->created_at,'Y-m-d')}}</td>
 
                                 <td>
-                                    <a href="{{route('blog.delete',$blog->id)}}" data-confirm-delete="true" class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i> </a>
+                                    <a href="{{route('blog.item.delete',$blog->id)}}" data-confirm-delete="true" class="btn btn-danger btn-sm"> <i class="fa fa-trash"></i> </a>
                                     <a  href="{{route('blog.edit',$blog->id)}}" class="btn btn-primary btn-sm"> <i class="fa fa-edit"></i> </a>
 
                                 </td>

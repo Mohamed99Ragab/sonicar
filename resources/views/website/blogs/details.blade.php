@@ -1,9 +1,9 @@
 @extends('website.layouts.master')
 
 @section('title')
-    {{$blog->title}} - Sonicar-Tech
+    {{$blog->meta_title}} - Sonicar-Tech
 @endsection
-@section('meta_description') {{ strip_tags(html_entity_decode(substr($blog->content,0,100))) }} @endsection
+@section('meta_description') {{$blog->meta_description}} @endsection
 
 @section('css')
 
@@ -66,7 +66,7 @@
                         <div class="row">
                             @foreach($relatedBlogs as $blog)
                             <!--blog content box-->
-                            <div class="col-sm-12 col-md-6">
+                            <div class="col-sm-12 col-md-6 mb-4">
                                 <div class="box-content-with-img ">
                                     <a href="{{route('blog.details',$blog->slug)}}">
                                     <img src="{{asset('uploads/blogs/'.$blog->file)}}" class="img-responsive" alt="blog image">
