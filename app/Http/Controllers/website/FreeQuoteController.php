@@ -43,7 +43,8 @@ class FreeQuoteController extends Controller
         catch (\Exception $e){
 
             DB::rollBack();
-            toast($e->getMessage(),'error');
+//            toast($e->getMessage(),'error');
+            return $e->getMessage();
             return back();
         }
 

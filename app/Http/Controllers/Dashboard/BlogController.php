@@ -27,13 +27,11 @@ class BlogController extends Controller
     public function index()
     {
 
+        $blogs = $this->modal->with(['category'])->latest()->get();
+
         $title = 'Delete Blog !';
         $text = "Are you sure you want to delete?";
         confirmDelete($title, $text);
-
-        $blogs = $this->modal->with(['category'])->latest()->get();
-
-
 
 
         return view('dashboard.blogs.index',compact('blogs'));
@@ -128,7 +126,8 @@ class BlogController extends Controller
     }
 
 
-    public function delete($id){
+    public function destroy($id){
+
 
        $blog = $this->modal->findOrFail($id);
 
@@ -151,10 +150,10 @@ class BlogController extends Controller
 
        foreach ($blogs as $blog){
 
-           $this->removeFile('disk','blogs',$blog->file);
+           $this->removeFile('public','blogs',$blog->file);
+           $blog->delete();
 
        }
-       $blogs->delete();
 
 
         return response()->json(['success'=>"Blog Deleted successfully."]);

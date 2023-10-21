@@ -4,7 +4,7 @@
     Sonicar technology
 @endsection
 
-@section('meta_description'){{$sharedData['meta_discription']}}@endsection
+@section('meta_description'){{ isset($sharedData['meta_discription']) ? $sharedData['meta_discription'] : ''}}@endsection
 
 @section('css')
 

@@ -23,6 +23,7 @@ class HomeController extends Controller
     public function index(){
 
 
+
         $projects = $this->projectModal->with(['projectDetails','attachments'])->get();
 
         $blogs = $this->blogModal->where('status','1')->latest()->take(3)->get();

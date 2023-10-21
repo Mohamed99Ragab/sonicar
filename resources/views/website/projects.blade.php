@@ -70,6 +70,7 @@
                     <button class="button" data-filter=".a1">Web Apps</button>
                     <button class="button" data-filter=".a2">Mobile App</button>
                     <button class="button" data-filter=".a3">UI/UX</button>
+                    <button class="button" data-filter=".a5">Planing</button>
                     <button class="button" data-filter=".a4">Technical Writing</button>
                 </div>
                 <!-- button-group ends -->
@@ -136,6 +137,22 @@
                                     <h3><a onclick="showModal(event)" data-id="{{$project->id}}" class="proDetModal proDetModal{{$project->id}}">{{$project->title}}<span>{{$project->category}}</span></a></h3>
                                 </div>
                             </div>
+
+                        @elseif($project->category == 'Planing')
+                            <div class="a5 grid-item">
+                                <div class="img_container">
+                                    <img src="{{asset("uploads/projects/$project->home_img")}}" alt="port_img" class="img-responsive">
+                                    <div class="overlay">
+                                        <a onclick="showModal(event)" data-id="{{$project->id}}" class="btn btn-nofill proDetModal{{$project->id}}">Discover</a>
+                                    </div>
+                                    <!-- End of .overlay -->
+                                </div>
+                                <!-- End of .img_container -->
+                                <div class="text-content">
+                                    <h3><a onclick="showModal(event)" data-id="{{$project->id}}" class="proDetModal proDetModal{{$project->id}}">{{$project->title}}<span>{{$project->category}}</span></a></h3>
+                                </div>
+                            </div>
+
 
                         @endif
 

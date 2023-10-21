@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\AdminPanelController;
 use App\Http\Controllers\Dashboard\Auth\AuthController;
 use App\Http\Controllers\Dashboard\Auth\ProfileController;
 use App\Http\Controllers\Dashboard\BlogController;
@@ -38,9 +39,14 @@ Route::get('logout',[AuthController::class,'logout'])->name('logout');
 
 Route::group(['middleware'=>'auth:web','prefix'=>'admin'],function (){
 
-    Route::get('/', function () {
-        return view('Dashboard.home');
-    })->name('dashboard');
+
+    Route::group(['controller'=>AdminPanelController::class],function (){
+
+        Route::get('/', 'index')->name('dashboard');
+    });
+
+
+
 
 
 
@@ -90,7 +96,7 @@ Route::group(['middleware'=>'auth:web','prefix'=>'admin'],function (){
 
     //    blogs
     Route::delete('blogDeleteAll',[BlogController::class,'deleteAll'])->name('blog.delete.all');
-    Route::get('blog/delete/{id}',[BlogController::class,'delete'])->name('blog.item.delete');
+    Route::get('blogDelete/{id}',[BlogController::class,'destroy'])->name('blog.delete');
     Route::resource('blog',BlogController::class);
 
     // profile

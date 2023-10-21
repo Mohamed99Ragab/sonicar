@@ -166,6 +166,8 @@ return [
          * Package Service Providers...
          */
         Jorenvh\Share\Providers\ShareServiceProvider::class,
+        RealRashid\SweetAlert\SweetAlertServiceProvider::class,
+
         /*
          * Application Service Providers...
          */
@@ -230,6 +232,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Share' => Jorenvh\Share\ShareFacade::class,
+        'Alert' => RealRashid\SweetAlert\Facades\Alert::class,
+
 
     ],
 
