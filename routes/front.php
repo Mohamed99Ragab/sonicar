@@ -8,6 +8,7 @@ use App\Http\Controllers\website\FreeQuoteController;
 use App\Http\Controllers\website\HomeController;
 use App\Http\Controllers\website\ProjectController;
 use Illuminate\Support\Facades\Route;
+use Spatie\Sitemap\SitemapGenerator;
 
 /*
 |--------------------------------------------------------------------------
@@ -63,3 +64,9 @@ Route::group(['controller'=>SubscriptionController::class],function (){
 
 });
 
+
+
+Route::get('site-map',function (){
+
+    SitemapGenerator::create('http://sonicar.test/')->getSitemap()->writeToDisk('public', 'sitemap.xml');
+});

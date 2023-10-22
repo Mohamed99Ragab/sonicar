@@ -1,7 +1,7 @@
 @extends('website.layouts.master')
 
 @section('title')
-    Sonicar technology
+    {{isset($sharedData['meta_title']) ? $sharedData['meta_title'] : ''}}
 @endsection
 
 @section('meta_description'){{ isset($sharedData['meta_discription']) ? $sharedData['meta_discription'] : ''}}@endsection

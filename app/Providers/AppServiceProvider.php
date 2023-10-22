@@ -37,12 +37,15 @@ class AppServiceProvider extends ServiceProvider
         $youtube = Setting::where('key','youtube')->first();
         $behance = Setting::where('key','behance')->first();
         $meta_discription = Setting::where('key','meta_discription')->first();
+        $meta_title = Setting::where('key','meta_title')->first();
 
 
         view()->share('sharedData', [
             'phone'=>$phone->value,
             'email'=>$email->value,
-            'meta_discription'=>$meta_discription->value
+            'meta_discription'=>$meta_discription->value,
+            'meta_title'=>$meta_title->value
+
 
         ]);
 
